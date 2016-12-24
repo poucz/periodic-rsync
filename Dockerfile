@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER Sami Haahtinen <ressu@ressukka.net>
 
-RUN apk add -U rsync sshpass \
+RUN apk add -U rsync sshpass openssh-client \
       && rm -rf /var/cache/apk/*
 
 ENV SCHEDULE="0 * * * *" \
