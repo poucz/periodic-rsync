@@ -12,4 +12,4 @@ VOLUME /data /etc/crontabs
 COPY entrypoint.sh rsync.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/sbin/crond", "-f"]
+CMD ["/usr/sbin/crond", "-f", "-d8"]
