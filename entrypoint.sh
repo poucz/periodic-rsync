@@ -2,4 +2,5 @@
 
 echo "$SCHEDULE /rsync.sh" > /etc/crontabs/root
 
-exec "$@"
+## Always run under tini, since we need to reap the leftovers
+exec tini -- "$@"
