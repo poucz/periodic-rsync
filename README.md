@@ -32,7 +32,9 @@ Source address for rsync copy
 
 Destination address to copy data to.
 
-## TEMPDIR
+# Directory for temporary files
 
-Temporary directory to store rsync transfers. This path is relative to /data,
-but can be set to an absolute path to move to a different mount.
+Sometimes it's needed to have temporary files outside of the transfer
+directory. Mounting a directory at `/rsync-temp` will cause rsync to store
+temporary files there during the transfer
+

@@ -1,14 +1,12 @@
 #!/bin/sh
 
-# Check if tempdir has been given
-if [ ! -z ${TEMPDIR} ]; then
-  RSYNC_FILTER="--filter='P ${TEMPDIR}' --filter='H ${TEMPDIR}'"
-  # Create tempdir and update the variable to be a absolute path
-  RSYNC_TEMP="--temp-dir='$( cd /data ; mkdir -p "$TEMPDIR" ; cd "$TEMPDIR" ; pwd )'"
+# Check if tempdir has been mounted
+if [ -d /rsync-temp ]; then
+  RSYNC_TEMP="--temp-dir=/rsync-temp"
 fi
 
 rsync \
   -vrmlty --delete-delay --delay-updates --delete-excluded \
-  ${RSYNC_TEMP} ${RSYNC_FILTER} \
+  ${RSYNC_TEMP} \
   -e "/usr/bin/sshpass -p${PASSWORD} /usr/bin/ssh -o ServerAliveInterval=60 -o StrictHostKeyChecking=no" \
   ${SOURCE} /data/ ${TARGET}
