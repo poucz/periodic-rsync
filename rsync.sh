@@ -4,8 +4,7 @@
 if [ ! -z ${TEMPDIR} ]; then
   RSYNC_FILTER="--filter='P ${TEMPDIR}' --filter='H ${TEMPDIR}'"
   # Create tempdir and update the variable to be a absolute path
-  TEMPDIR="$( cd /data ; mkdir -p "$TEMPDIR" ; cd "$TEMPDIR" ; pwd )"
-  RSYNC_TEMP="--temp-dir='$(TEMPDIR)'"
+  RSYNC_TEMP="--temp-dir='$( cd /data ; mkdir -p "$TEMPDIR" ; cd "$TEMPDIR" ; pwd )'"
 fi
 
 rsync \
