@@ -14,7 +14,7 @@ docker run -v /storage:/data -e PASSWORD=Insecure -e SOURCE=user@server.net:/sou
 
 # Environment
 
-This container takes 3 environment variables.
+This container takes the following environment variables.
 
 ## SCHEDULE
 
@@ -31,3 +31,8 @@ Source address for rsync copy
 ## DESTINATION
 
 Destination address to copy data to.
+
+## TEMPDIR
+
+Temporary directory to store rsync transfers. This path is relative to /data,
+but can be set to an absolute path to move to a different mount.
