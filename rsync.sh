@@ -2,7 +2,7 @@
 
 # Check if tempdir has been mounted
 if [ -d /rsync-temp ]; then
-  RSYNC_TEMP="--temp-dir=/rsync-temp"
+  RSYNC_TEMP="--partial-dir=/rsync-temp"
 fi
 
 rsync \
