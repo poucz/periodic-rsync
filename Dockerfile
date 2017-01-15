@@ -1,7 +1,12 @@
 FROM alpine
 MAINTAINER Sami Haahtinen <ressu@ressukka.net>
 
-RUN apk add -U rsync sshpass openssh-client tini \
+RUN apk add -U \
+      bash \
+      openssh-client \
+      rsync \
+      sshpass \
+      tini \
       && rm -rf /var/cache/apk/*
 
 ENV SCHEDULE="0 * * * *" \
