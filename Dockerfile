@@ -2,7 +2,6 @@ FROM alpine
 MAINTAINER Sami Haahtinen <ressu@ressukka.net>
 
 RUN apk add -U \
-      bash \
       openssh-client \
       rsync \
       sshpass \
