@@ -35,6 +35,5 @@ Destination address to copy data to.
 # Directory for temporary files
 
 Sometimes it's needed to have temporary files outside of the transfer
-directory. Mounting a directory at `/rsync-temp` will cause rsync to store
-temporary files there during the transfer
-
+directory. Creating a directory named `.temp` in the filesystem mounted to
+`/data`, will use that directory to store temporary files during transfer.

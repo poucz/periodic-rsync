@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Check if tempdir has been mounted
-if [ -d /rsync-temp ]; then
-  RSYNC_TEMP="--partial-dir=/rsync-temp/ --temp-dir=/rsync-temp/"
+# Check if tempdir exists
+if [ -d /data/.temp ]; then
+  RSYNC_TEMP="--partial-dir=/data/.temp/ --temp-dir=/data/.temp/ -f 'P /.temp' -f 'H /.temp'"
 fi
 
 rsync \
