@@ -28,6 +28,11 @@ The SSH password used to login to the SSH server.
 
 Source address for rsync copy
 
+## SSH_OPTIONS
+
+Override default SSH options. By default set to `-Tx`, which disables terminal
+and X forwarding
+
 ## DESTINATION
 
 Destination address to copy data to.

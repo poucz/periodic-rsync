@@ -8,5 +8,5 @@ fi
 rsync \
   -vrmlty --delete-delay --delay-updates --delete-excluded \
   ${RSYNC_TEMP} \
-  -e "/usr/bin/sshpass -p${PASSWORD} /usr/bin/ssh -o ServerAliveInterval=60 -o StrictHostKeyChecking=no" \
+  -e "/usr/bin/sshpass -p${PASSWORD} /usr/bin/ssh ${SSH_OPTIONS--Tx} -o ServerAliveInterval=60 -o StrictHostKeyChecking=no" \
   ${SOURCE} /data/ ${TARGET}
