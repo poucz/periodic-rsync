@@ -3,6 +3,7 @@ MAINTAINER Sami Haahtinen <ressu@ressukka.net>
 
 RUN apk add -U \
       openssh-client \
+      bash \
       rsync \
       sshpass \
       tini \
